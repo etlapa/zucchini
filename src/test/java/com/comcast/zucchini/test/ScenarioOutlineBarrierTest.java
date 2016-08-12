@@ -10,33 +10,37 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.comcast.zucchini;
+package com.comcast.zucchini.test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
+
+import com.comcast.zucchini.AbstractZucchiniTest;
+import com.comcast.zucchini.TestContext;
+import com.comcast.zucchini.ZucchiniOutput;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(features = { "src/test/resources" }, tags = { "@MULTI-TEST" })
+@CucumberOptions(features = { "src/test/resources" }, tags = { "@OUTLINE-BARRIER" })
 @ZucchiniOutput()
-public class MultipleZucchiniCukesTest extends AbstractZucchiniTest {
+public class ScenarioOutlineBarrierTest extends AbstractZucchiniTest {
+    
+    public static int numContexts = 3;
     
     @Override
     public List<TestContext> getTestContexts() {
-        List<TestContext> contexts = new LinkedList<TestContext>();
+        List<TestContext> contexts = new ArrayList<TestContext>();
         
-        String[] input = new String[] { "potato", "tomato", "eggplant" };
-        
-        for (int i = 0; i < input.length; i++) {
-            contexts.add(new TestContext(input[i], new HashMap<String, Object>() {
-                
-                {
-                    put("veggie", new Veggie());
-                }
-            }));
+        for (int i = 0; i < numContexts; i++) {
+            contexts.add(new TestContext(String.format("ThreadIdx[%d]", i), new HashMap<String, Object>()));
         }
         
         return contexts;
+    }
+    
+    @Override
+    public boolean canBarrier() {
+        return true;
     }
 }

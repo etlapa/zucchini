@@ -261,11 +261,6 @@
 			<version>${cucumber.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-testng</artifactId>
-			<version>${cucumber.version}</version>
-		</dependency>
-		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
 			<version>${cucumber.reporting.version}</version>
