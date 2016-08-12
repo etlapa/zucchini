@@ -25,14 +25,14 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class ZucchiniBarrierGlue {
 
     private static int barrierCount = 0;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ZucchiniBarrierGlue.class);
+    private static final Logger LOGGER = LogManager.getLogger(ZucchiniBarrierGlue.class);
 
     public static String name() {
         return TestContext.getCurrent().name();

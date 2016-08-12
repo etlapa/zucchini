@@ -27,8 +27,8 @@ import java.util.concurrent.TimeoutException;
 
 import static com.comcast.zucchini.ZucchiniUtils.tcname;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 /**
  * This is the heavy lifter behind the Barrier class.
@@ -38,7 +38,7 @@ import org.slf4j.LoggerFactory;
  * @author Andrew Benton
  */
 class FlexibleBarrier {
-    private static final Logger LOGGER = LoggerFactory.getLogger(FlexibleBarrier.class);
+    private static final Logger LOGGER = LogManager.getLogger(FlexibleBarrier.class);
 
     private AbstractZucchiniTest azt;
     private Phaser primary;

@@ -20,13 +20,13 @@ import static org.testng.Assert.assertFalse;
 
 import java.util.LinkedList;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.testng.annotations.Test;
 
 class TestContextTest {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TestContextTest.class);
+    private static final Logger LOGGER = LogManager.getLogger(TestContextTest.class);
 
     @Test
     void verifyThreadUniqueValues() {

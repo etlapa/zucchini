@@ -20,8 +20,8 @@ import java.util.Collection;
 
 import java.io.IOException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import cucumber.runtime.Backend;
 import cucumber.runtime.RuntimeOptions;
@@ -50,7 +50,7 @@ import gherkin.formatter.model.Step;
  */
 public class ZucchiniRuntime extends cucumber.runtime.Runtime {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ZucchiniRuntime.class);
+    private static final Logger LOGGER = LogManager.getLogger(ZucchiniRuntime.class);
 
     protected ResourceLoader rl;
     protected ClassLoader cl;

@@ -20,8 +20,8 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import cucumber.runtime.ClassFinder;
 import cucumber.runtime.CucumberException;
@@ -38,7 +38,7 @@ import gherkin.formatter.Formatter;
  */
 public class TestNGZucchiniRunner {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(TestNGZucchiniRunner.class);
+    private static final Logger LOGGER = LogManager.getLogger(TestNGZucchiniRunner.class);
 
     private final cucumber.runtime.Runtime runtime;
     private final StringBuilder output = new StringBuilder();

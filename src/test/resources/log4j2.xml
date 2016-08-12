@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <properties>
+  	<property name="aplication">cucumber-test</property>
+  	<property name="aplication.short">cucumber-test</property>
+    <property name="log.dir">target/</property>
+    <property name="log.pattern">%d{d/M/yyyy HH:mm:ss.SSS} %-5level [${aplication.short}] %logger{36} - %msg%n</property>
+  </properties>
+ 
+  <appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="${log.pattern}"/>
+    </Console>
+    <RollingFile name="RollingFile" fileName="${log.dir}${aplication}.log"
+    	  filePattern="${log.dir}${aplication}-%i.log">>
+      <PatternLayout pattern="${log.pattern}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="3"/>
+    </RollingFile>
+  </appenders>
+
+  <loggers>
+    <root level="debug">
+      <appender-ref ref="Console"/>
+      <appender-ref ref="RollingFile"/>
+    </root>
+  </loggers>
+</configuration>

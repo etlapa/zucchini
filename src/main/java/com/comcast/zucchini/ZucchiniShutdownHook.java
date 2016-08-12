@@ -28,12 +28,12 @@ import com.google.gson.JsonArray;
 
 import net.masterthought.cucumber.ReportBuilder;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 class ZucchiniShutdownHook extends Thread {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ZucchiniShutdownHook.class);
+    private static final Logger LOGGER = LogManager.getLogger(ZucchiniShutdownHook.class);
     private static final String NAME_ENV_VAR = "ZUCCHINI_REPORT_NAME";
 
     private static ZucchiniShutdownHook instance = null;

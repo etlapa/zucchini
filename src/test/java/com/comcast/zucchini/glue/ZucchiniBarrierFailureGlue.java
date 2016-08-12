@@ -23,11 +23,11 @@ import com.comcast.zucchini.TestContext;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class ZucchiniBarrierFailureGlue {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ZucchiniBarrierFailureGlue.class);
+    private static final Logger LOGGER = LogManager.getLogger(ZucchiniBarrierFailureGlue.class);
 
     private static final String FF_ENV_NAME = "ZUCCHINI_TEST_FF_PATTERNS";
 
