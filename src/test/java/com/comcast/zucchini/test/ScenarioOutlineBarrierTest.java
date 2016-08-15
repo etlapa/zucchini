@@ -22,7 +22,7 @@ import com.comcast.zucchini.ZucchiniOutput;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(features = { "src/test/resources" }, tags = { "@OUTLINE-BARRIER" })
+@CucumberOptions(glue = { "com.comcast.zucchini.glue" }, features = { "src/test/resources" }, tags = { "@OUTLINE-BARRIER" })
 @ZucchiniOutput()
 public class ScenarioOutlineBarrierTest extends AbstractZucchiniTest {
     

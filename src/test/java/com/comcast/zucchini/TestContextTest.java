@@ -27,7 +27,7 @@ public class TestContextTest {
     
     @Test
     public void verifyThreadUniqueValues() {
-        LOGGER.debug("be careful!!!");
+        
         LinkedList<TestThread> threads = new LinkedList<TestThread>();
         
         TestThread tmp;

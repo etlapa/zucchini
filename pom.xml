@@ -54,7 +54,7 @@
 		<cucumber.version>1.2.4</cucumber.version>
 		<cucumber.reporting.version>0.0.23</cucumber.reporting.version>
 		<junit.version>4.11</junit.version>
-		<apache.commons.version>3.0</apache.commons.version>		
+		<apache.commons.version>3.0</apache.commons.version>
 
 		<!-- Plugin Versions -->
 		<maven.source.plugin.version>2.3</maven.source.plugin.version>
@@ -261,6 +261,12 @@
 			<version>${cucumber.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
 			<version>${cucumber.reporting.version}</version>
@@ -290,6 +296,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
-		</dependency>		
+		</dependency>
 	</dependencies>
 </project>

@@ -23,7 +23,7 @@ import com.comcast.zucchini.ZucchiniOutput;
 
 import cucumber.api.CucumberOptions;
 
-@CucumberOptions(features = { "src/test/resources" }, tags = { "@MULTI-TEST" })
+@CucumberOptions(glue = { "com.comcast.zucchini.glue" }, features = { "src/test/resources" }, tags = { "@MULTI-TEST" })
 @ZucchiniOutput()
 public class MultipleZucchiniCukesTest extends AbstractZucchiniTest {
     
